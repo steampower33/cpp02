@@ -6,14 +6,16 @@
 class Fixed
 {
 public:
-	Fixed(void);
+	Fixed();
 	Fixed(int int_num);
 	Fixed(const float floating_point_num);
 	Fixed(const Fixed& other);
 	Fixed& operator=(const Fixed& other);
 	~Fixed();
-	float toFloat(void) const;
-	int toInt(void) const;
+	int getRawBits() const;
+	void setRawBits(int const raw);
+	float toFloat() const;
+	int toInt() const;
 private:
 	int num;
 	static const int fractional_bits = 8;
